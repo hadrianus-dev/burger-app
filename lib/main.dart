@@ -1,6 +1,8 @@
 import 'package:burgerapp/components/header.dart';
 import 'package:flutter/material.dart';
 
+import 'components/footer.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
               actionsIconTheme: IconThemeData(color: Colors.white)),
           bottomAppBarTheme: const BottomAppBarTheme(color: Colors.teal),
           floatingActionButtonTheme: const FloatingActionButtonThemeData(
-              backgroundColor: Colors.teal)),
+              backgroundColor: Colors.orange)),
       home: const Hamburger(),
       debugShowCheckedModeBanner: false,
     );
@@ -72,33 +74,7 @@ class _HamburgerState extends State<Hamburger> {
         onPressed: null,
         child: Icon(Icons.home),
       ),
-      bottomNavigationBar: ClipRRect(
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(45)),
-        child: Container(
-          color: Colors.black38,
-          child: const BottomAppBar(
-            shape: CircularNotchedRectangle(),
-            child: Row(
-              children: [
-                Spacer(),
-                IconButton(
-                  onPressed: null,
-                  icon: Icon(Icons.add_alert),
-                  color: Colors.white,
-                ),
-                Spacer(),
-                Spacer(),
-                IconButton(
-                  onPressed: null,
-                  icon: Icon(Icons.turned_in),
-                  color: Colors.white,
-                ),
-                Spacer(),
-              ],
-            ),
-          ),
-        ),
-      ),
+      bottomNavigationBar: CustomFooter(),
     );
   }
 }
