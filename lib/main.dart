@@ -1,3 +1,4 @@
+import 'package:burgerapp/components/header.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -8,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Humburger App',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           color: Colors.teal, 
@@ -37,12 +38,14 @@ class _HamburgerState extends State<Hamburger> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            pinned: true,
             title: Text('Hamburger'),
-            leading: IconButton(onPressed: null, icon: Icon(Icons.menu)),
+            leading: IconButton(onPressed: null, icon: Icon(Icons.menu),),
             actions: <Widget>[
-              IconButton(onPressed: null, icon: Icon(Icons.shopping_cart))
+              IconButton(onPressed: null, icon: Icon(Icons.shopping_cart),)
             ],
-          )
+          ),
+          Header(),
         ],
       ),
     );
