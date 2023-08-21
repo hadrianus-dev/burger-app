@@ -41,7 +41,7 @@ class _HeaderState extends State<Header> {
                               radius: 35,
                               child: CircleAvatar(
                                 backgroundImage:
-                                    AssetImage('assets/images/image1.png'),
+                                    AssetImage('assets/images/image2.png'),
                                 radius: 30,
                               ),
                             ),
