@@ -1,5 +1,6 @@
 import 'package:burgerapp/categories.dart';
 import 'package:burgerapp/components/header.dart';
+import 'package:burgerapp/hamburgerList.dart';
 import 'package:flutter/material.dart';
 
 import 'components/footer.dart';
@@ -14,6 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Humburger App',
       theme: ThemeData(
+          primaryColor: Colors.teal,
+          cardColor: Colors.white,
           appBarTheme: const AppBarTheme(
               color: Colors.teal,
               centerTitle: true,
@@ -38,10 +41,10 @@ class Hamburger extends StatefulWidget {
 class _HamburgerState extends State<Hamburger> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: CustomScrollView(
         slivers: [
-          const SliverAppBar(
+          SliverAppBar(
             pinned: true,
             title: Text('Hamburger'),
             leading: IconButton(
@@ -57,22 +60,13 @@ class _HamburgerState extends State<Hamburger> {
               )
             ],
           ),
-          const Header(),
-          const Categories(),
-          SliverList(
-            delegate: SliverChildListDelegate([
-              const Text(
-                'Hamburger',
-                style: TextStyle(
-                  fontSize: 300,
-                ),
-              )
-            ]),
-          ),
+          Header(),
+          Categories(),
+          HumburgerList()
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: const FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         onPressed: null,
         child: Icon(Icons.home),
       ),
